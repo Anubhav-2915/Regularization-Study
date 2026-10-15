@@ -1,0 +1,203 @@
+{
+  "exp_id": "exp2_regularization_sweep",
+  "title": "Ridge and Lasso across alpha",
+  "created": "2026-10-13T01:26:28",
+  "dataset": {
+    "name": "sklearn load_diabetes",
+    "n_samples": 442
+  },
+  "preprocessing": "None applied (same as baseline)",
+  "seeds": {
+    "train_test_split": 42,
+    "KFold": 42
+  },
+  "models": {
+    "Ridge": {
+      "alpha": [
+        0.001,
+        0.01,
+        0.1,
+        1,
+        10,
+        100,
+        1000
+      ]
+    },
+    "Lasso": {
+      "alpha": [
+        0.001,
+        0.01,
+        0.1,
+        1,
+        10,
+        100,
+        1000
+      ],
+      "max_iter": 100000
+    },
+    "LinearRegression": "baseline"
+  },
+  "train_test_protocol": "Same 80/20 split as the baseline; every model evaluated on the same test set",
+  "cv_protocol": "Same 5-fold shuffled KFold (random_state=42) on the training set, same for every model",
+  "metrics": [
+    {
+      "model": "LinearRegression",
+      "alpha": null,
+      "cv_RMSE_mean": 55.39463332801855,
+      "cv_RMSE_std": 2.3614957385638764,
+      "test_RMSE": 53.85344583676592,
+      "test_R2": 0.4526027629719197,
+      "n_zero_coefs": 0
+    },
+    {
+      "model": "Ridge",
+      "alpha": 0.001,
+      "cv_RMSE_mean": 55.378370524491594,
+      "cv_RMSE_std": 2.3706141661807156,
+      "test_RMSE": 53.812835253363176,
+      "test_R2": 0.453428030101933,
+      "n_zero_coefs": 0
+    },
+    {
+      "model": "Ridge",
+      "alpha": 0.01,
+      "cv_RMSE_mean": 55.40942488332297,
+      "cv_RMSE_std": 2.364587789951037,
+      "test_RMSE": 53.68696471589738,
+      "test_R2": 0.4559819504579109,
+      "n_zero_coefs": 0
+    },
+    {
+      "model": "Ridge",
+      "alpha": 0.1,
+      "cv_RMSE_mean": 55.52678169013605,
+      "cv_RMSE_std": 2.4784642192272233,
+      "test_RMSE": 53.446111997699646,
+      "test_R2": 0.46085219464119254,
+      "n_zero_coefs": 0
+    },
+    {
+      "model": "Ridge",
+      "alpha": 1.0,
+      "cv_RMSE_mean": 60.02140227652286,
+      "cv_RMSE_std": 4.350535467981756,
+      "test_RMSE": 55.47446204180109,
+      "test_R2": 0.41915292635986545,
+      "n_zero_coefs": 0
+    },
+    {
+      "model": "Ridge",
+      "alpha": 10.0,
+      "cv_RMSE_mean": 72.6114017935851,
+      "cv_RMSE_std": 5.55499610138039,
+      "test_RMSE": 66.66297800625937,
+      "test_R2": 0.161225867509881,
+      "n_zero_coefs": 0
+    },
+    {
+      "model": "Ridge",
+      "alpha": 100.0,
+      "cv_RMSE_mean": 77.43927066498227,
+      "cv_RMSE_std": 5.634239641994698,
+      "test_RMSE": 72.3440646257758,
+      "test_R2": 0.012171803489062438,
+      "n_zero_coefs": 0
+    },
+    {
+      "model": "Ridge",
+      "alpha": 1000.0,
+      "cv_RMSE_mean": 78.062371386587,
+      "cv_RMSE_std": 5.637953910292327,
+      "test_RMSE": 73.13162587822465,
+      "test_R2": -0.009452910647574031,
+      "n_zero_coefs": 0
+    },
+    {
+      "model": "Lasso",
+      "alpha": 0.001,
+      "cv_RMSE_mean": 55.38147780261473,
+      "cv_RMSE_std": 2.367586791212393,
+      "test_RMSE": 53.81830345898313,
+      "test_R2": 0.4533169443449512,
+      "n_zero_coefs": 0
+    },
+    {
+      "model": "Lasso",
+      "alpha": 0.01,
+      "cv_RMSE_mean": 55.36344385743216,
+      "cv_RMSE_std": 2.3250719842366707,
+      "test_RMSE": 53.652207654360375,
+      "test_R2": 0.4566861194580625,
+      "n_zero_coefs": 0
+    },
+    {
+      "model": "Lasso",
+      "alpha": 0.1,
+      "cv_RMSE_mean": 55.54123894840357,
+      "cv_RMSE_std": 2.388828187676214,
+      "test_RMSE": 52.897953506442185,
+      "test_R2": 0.4718547867276227,
+      "n_zero_coefs": 3
+    },
+    {
+      "model": "Lasso",
+      "alpha": 1.0,
+      "cv_RMSE_mean": 62.743534673044074,
+      "cv_RMSE_std": 4.475965379825257,
+      "test_RMSE": 58.340172450954185,
+      "test_R2": 0.3575918767219115,
+      "n_zero_coefs": 7
+    },
+    {
+      "model": "Lasso",
+      "alpha": 10.0,
+      "cv_RMSE_mean": 78.13363381604925,
+      "cv_RMSE_std": 5.638301659248414,
+      "test_RMSE": 73.22249283682244,
+      "test_R2": -0.011962984778542296,
+      "n_zero_coefs": 10
+    },
+    {
+      "model": "Lasso",
+      "alpha": 100.0,
+      "cv_RMSE_mean": 78.13363381604925,
+      "cv_RMSE_std": 5.638301659248414,
+      "test_RMSE": 73.22249283682244,
+      "test_R2": -0.011962984778542296,
+      "n_zero_coefs": 10
+    },
+    {
+      "model": "Lasso",
+      "alpha": 1000.0,
+      "cv_RMSE_mean": 78.13363381604925,
+      "cv_RMSE_std": 5.638301659248414,
+      "test_RMSE": 73.22249283682244,
+      "test_R2": -0.011962984778542296,
+      "n_zero_coefs": 10
+    }
+  ],
+  "tables": [
+    "regularized_results.csv",
+    "all_results.csv",
+    "coef_comparison.csv"
+  ],
+  "figures": [
+    "alpha_vs_cv_rmse.png",
+    "alpha_vs_test_rmse.png",
+    "alpha_vs_test_r2.png",
+    "coef_paths.png"
+  ],
+  "observation": "No alpha gave a clear improvement over the baseline. Performance degraded as alpha grew, Ridge shrank coefficients smoothly, and Lasso removed features.",
+  "notes": "",
+  "missing_files": [],
+  "non_descriptive_figure_names": [],
+  "environment": {
+    "python": "3.14.2",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "numpy": "2.5.3",
+    "pandas": "3.0.6",
+    "sklearn": "1.9.1",
+    "scipy": "1.18.1",
+    "matplotlib": "3.11.2"
+  }
+}

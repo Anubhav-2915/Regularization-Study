@@ -1,0 +1,66 @@
+{
+  "exp_id": "exp5_gradient_descent",
+  "title": "Linear regression by gradient descent vs sklearn",
+  "created": "2026-10-13T01:30:51",
+  "dataset": {
+    "name": "sklearn load_diabetes",
+    "n_train": 353,
+    "n_test": 89
+  },
+  "preprocessing": "StandardScaler fitted on the training rows only, applied to train and test; target left unscaled",
+  "seeds": {
+    "train_test_split": 42
+  },
+  "models": {
+    "gradient_descent": {
+      "learning_rate": 0.1,
+      "iterations": 10000,
+      "init": "zeros",
+      "loss": "MSE"
+    },
+    "sklearn_LinearRegression": "default, same standardized data",
+    "learning_rates_tested": [
+      0.001,
+      0.01,
+      0.1,
+      0.2,
+      0.3
+    ]
+  },
+  "train_test_protocol": "Same 80/20 split as the baseline (random_state=42)",
+  "cv_protocol": "not applicable: no hyperparameter selection; learning rate and iterations set by hand",
+  "metrics": [
+    {
+      "train_MSE": 2868.5497028355776,
+      "test_RMSE": 53.85344583676593,
+      "test_R2": 0.4526027629719195
+    },
+    {
+      "train_MSE": 2868.5497028355776,
+      "test_RMSE": 53.85344583375748,
+      "test_R2": 0.45260276303307856
+    }
+  ],
+  "tables": [
+    "gd_vs_sklearn_coefficients.csv",
+    "gd_vs_sklearn_metrics.csv"
+  ],
+  "figures": [
+    "gd_loss_curve.png",
+    "gd_coef_distance.png",
+    "gd_learning_rates.png"
+  ],
+  "observation": "Gradient descent reached essentially the same solution and test performance as sklearn. Coefficients converged more slowly than the loss because of correlated features, and learning rates above the stability limit diverged.",
+  "notes": "",
+  "missing_files": [],
+  "non_descriptive_figure_names": [],
+  "environment": {
+    "python": "3.14.2",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "numpy": "2.5.3",
+    "pandas": "3.0.6",
+    "sklearn": "1.9.1",
+    "scipy": "1.18.1",
+    "matplotlib": "3.11.2"
+  }
+}

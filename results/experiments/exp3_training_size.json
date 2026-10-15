@@ -1,0 +1,253 @@
+{
+  "exp_id": "exp3_training_size",
+  "title": "Regularization vs training-set size",
+  "created": "2026-10-13T01:26:39",
+  "dataset": {
+    "name": "sklearn load_diabetes",
+    "n_train_pool": 353,
+    "n_test": 89
+  },
+  "preprocessing": "None applied",
+  "seeds": {
+    "split": 42,
+    "subsampling_and_cv_seeds": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19
+    ]
+  },
+  "models": {
+    "LinearRegression": "default",
+    "Ridge": {
+      "alpha_grid": [
+        0.001,
+        0.01,
+        0.1,
+        1,
+        10,
+        100,
+        1000
+      ]
+    },
+    "Lasso": {
+      "alpha_grid": [
+        0.001,
+        0.01,
+        0.1,
+        1,
+        10,
+        100,
+        1000
+      ],
+      "max_iter": 100000
+    }
+  },
+  "train_test_protocol": "Fixed test set; 100% = all 353 training rows; fractions [0.1, 0.25, 0.5, 0.75, 1.0]; nested random subsets per seed",
+  "cv_protocol": "Alpha chosen per training subset by GridSearchCV, 5-fold shuffled KFold (random_state = seed), lowest mean CV RMSE; test set never used",
+  "metrics": [
+    {
+      "model": "Lasso",
+      "fraction": 0.1,
+      "n_train": 35,
+      "test_RMSE_mean": 61.86250305677555,
+      "test_RMSE_std": 6.184634357473205,
+      "test_R2_mean": 0.27081996045883633,
+      "test_R2_std": 0.15397736182718783,
+      "median_alpha": 0.1,
+      "mean_zero_coefs": 4.1
+    },
+    {
+      "model": "Lasso",
+      "fraction": 0.25,
+      "n_train": 88,
+      "test_RMSE_mean": 55.8718531564518,
+      "test_RMSE_std": 2.153751888279982,
+      "test_R2_mean": 0.40996958215705703,
+      "test_R2_std": 0.04595481965842901,
+      "median_alpha": 0.1,
+      "mean_zero_coefs": 2.55
+    },
+    {
+      "model": "Lasso",
+      "fraction": 0.5,
+      "n_train": 176,
+      "test_RMSE_mean": 54.76265542311245,
+      "test_RMSE_std": 1.300902103007831,
+      "test_R2_mean": 0.43365983075169845,
+      "test_R2_std": 0.026892492860599058,
+      "median_alpha": 0.01,
+      "mean_zero_coefs": 1.4
+    },
+    {
+      "model": "Lasso",
+      "fraction": 0.75,
+      "n_train": 265,
+      "test_RMSE_mean": 53.83087472233158,
+      "test_RMSE_std": 0.5048159675336412,
+      "test_R2_mean": 0.4530158236056989,
+      "test_R2_std": 0.010285626720864386,
+      "median_alpha": 0.01,
+      "mean_zero_coefs": 0.7
+    },
+    {
+      "model": "Lasso",
+      "fraction": 1.0,
+      "n_train": 353,
+      "test_RMSE_mean": 53.73525555667176,
+      "test_RMSE_std": 0.08520534995755316,
+      "test_R2_mean": 0.4550015319015068,
+      "test_R2_std": 0.0017283503652180808,
+      "median_alpha": 0.0055,
+      "mean_zero_coefs": 0.0
+    },
+    {
+      "model": "LinearRegression",
+      "fraction": 0.1,
+      "n_train": 35,
+      "test_RMSE_mean": 65.50193099998586,
+      "test_RMSE_std": 6.5673378477917845,
+      "test_R2_mean": 0.1824552031703623,
+      "test_R2_std": 0.17007018879509098,
+      "median_alpha": null,
+      "mean_zero_coefs": 0.0
+    },
+    {
+      "model": "LinearRegression",
+      "fraction": 0.25,
+      "n_train": 88,
+      "test_RMSE_mean": 57.05593659453206,
+      "test_RMSE_std": 2.190415075656995,
+      "test_R2_mean": 0.38470280246588334,
+      "test_R2_std": 0.04766669398155732,
+      "median_alpha": null,
+      "mean_zero_coefs": 0.0
+    },
+    {
+      "model": "LinearRegression",
+      "fraction": 0.5,
+      "n_train": 176,
+      "test_RMSE_mean": 55.15202697166899,
+      "test_RMSE_std": 1.2057836201815673,
+      "test_R2_mean": 0.42562473821790886,
+      "test_R2_std": 0.025008788755379166,
+      "median_alpha": null,
+      "mean_zero_coefs": 0.0
+    },
+    {
+      "model": "LinearRegression",
+      "fraction": 0.75,
+      "n_train": 265,
+      "test_RMSE_mean": 54.11210500303862,
+      "test_RMSE_std": 0.490041435233612,
+      "test_R2_mean": 0.44728875645028443,
+      "test_R2_std": 0.010018218138652415,
+      "median_alpha": null,
+      "mean_zero_coefs": 0.0
+    },
+    {
+      "model": "LinearRegression",
+      "fraction": 1.0,
+      "n_train": 353,
+      "test_RMSE_mean": 53.853445836765935,
+      "test_RMSE_std": 9.915491928671267e-15,
+      "test_R2_mean": 0.4526027629719194,
+      "test_R2_std": 1.474198051531789e-16,
+      "median_alpha": null,
+      "mean_zero_coefs": 0.0
+    },
+    {
+      "model": "Ridge",
+      "fraction": 0.1,
+      "n_train": 35,
+      "test_RMSE_mean": 59.46241414911682,
+      "test_RMSE_std": 3.7933308935696477,
+      "test_R2_mean": 0.33005909301492137,
+      "test_R2_std": 0.0879806855556541,
+      "median_alpha": 0.01,
+      "mean_zero_coefs": 0.0
+    },
+    {
+      "model": "Ridge",
+      "fraction": 0.25,
+      "n_train": 88,
+      "test_RMSE_mean": 55.815786002379255,
+      "test_RMSE_std": 1.5658610086501414,
+      "test_R2_mean": 0.4115436024270537,
+      "test_R2_std": 0.03330205505249872,
+      "median_alpha": 0.01,
+      "mean_zero_coefs": 0.0
+    },
+    {
+      "model": "Ridge",
+      "fraction": 0.5,
+      "n_train": 176,
+      "test_RMSE_mean": 54.842922199764416,
+      "test_RMSE_std": 1.1257106943346638,
+      "test_R2_mean": 0.4320755384949395,
+      "test_R2_std": 0.023280611630539964,
+      "median_alpha": 0.01,
+      "mean_zero_coefs": 0.0
+    },
+    {
+      "model": "Ridge",
+      "fraction": 0.75,
+      "n_train": 265,
+      "test_RMSE_mean": 53.88330952080828,
+      "test_RMSE_std": 0.49885849437667684,
+      "test_R2_mean": 0.45195086899205095,
+      "test_R2_std": 0.010172574265842773,
+      "median_alpha": 0.01,
+      "mean_zero_coefs": 0.0
+    },
+    {
+      "model": "Ridge",
+      "fraction": 1.0,
+      "n_train": 353,
+      "test_RMSE_mean": 53.658763588551096,
+      "test_RMSE_std": 0.15270505884166988,
+      "test_R2_mean": 0.4565491515883031,
+      "test_R2_std": 0.0030910643055097374,
+      "median_alpha": 0.01,
+      "mean_zero_coefs": 0.0
+    }
+  ],
+  "tables": [
+    "training_size_raw.csv",
+    "training_size_summary.csv",
+    "regularization_gain.csv"
+  ],
+  "figures": [
+    "size_vs_test_rmse.png",
+    "regularization_gain_vs_size.png"
+  ],
+  "observation": "Regularization helped most when training data was scarce and its benefit shrank as data grew, while remaining small but consistently positive at larger sizes. Linear regression was least stable at small sizes.",
+  "notes": "",
+  "missing_files": [],
+  "non_descriptive_figure_names": [],
+  "environment": {
+    "python": "3.14.2",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "numpy": "2.5.3",
+    "pandas": "3.0.6",
+    "sklearn": "1.9.1",
+    "scipy": "1.18.1",
+    "matplotlib": "3.11.2"
+  }
+}

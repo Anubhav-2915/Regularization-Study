@@ -1,0 +1,5 @@
+rho,Ridge_coef_gain_mean,Lasso_coef_gain_mean,Ridge_rmse_gain_mean,Lasso_rmse_gain_mean,Ridge_coef_gain_winrate,Lasso_coef_gain_winrate,Ridge_rmse_gain_winrate,Lasso_rmse_gain_winrate
+0.0,0.084,0.03,0.028,0.008,0.74,0.82,0.72,0.86
+0.3,0.169,0.204,0.043,0.022,0.84,0.92,0.76,0.82
+0.6,0.341,0.442,0.056,0.048,0.84,0.98,0.84,0.82
+0.9,1.913,1.571,0.144,0.104,0.98,1.0,0.9,0.86

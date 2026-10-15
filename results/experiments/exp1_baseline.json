@@ -1,0 +1,55 @@
+{
+  "exp_id": "exp1_baseline",
+  "title": "EDA and LinearRegression baseline",
+  "created": "2026-10-13T01:26:07",
+  "dataset": {
+    "name": "sklearn load_diabetes",
+    "n_samples": 442,
+    "n_features": 10
+  },
+  "preprocessing": "None applied (sklearn's features are already mean-centered and scaled)",
+  "seeds": {
+    "train_test_split": 42,
+    "KFold": 42
+  },
+  "models": {
+    "LinearRegression": "default settings"
+  },
+  "train_test_protocol": "80/20 split, random_state=42; test set held out",
+  "cv_protocol": "5-fold shuffled KFold, random_state=42, on the training set only",
+  "metrics": [
+    {
+      "model": "LinearRegression",
+      "alpha": null,
+      "test_MSE": 2900.1936284934804,
+      "test_RMSE": 53.85344583676592,
+      "test_R2": 0.4526027629719197,
+      "cv_RMSE_mean": 55.39463332801855,
+      "cv_RMSE_std": 2.3614957385638764
+    }
+  ],
+  "tables": [
+    "baseline_coefficients.csv",
+    "results_table.csv"
+  ],
+  "figures": [
+    "target_distribution.png",
+    "correlation_matrix.png",
+    "baseline_actual_vs_predicted.png"
+  ],
+  "observation": "CV and test errors agree, so the baseline is stable. Several coefficients (notably the correlated s1/s2 pair) are large and of opposite sign, consistent with multicollinearity.",
+  "notes": "",
+  "missing_files": [
+    "figures/correlation_matrix.png"
+  ],
+  "non_descriptive_figure_names": [],
+  "environment": {
+    "python": "3.14.2",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "numpy": "2.5.3",
+    "pandas": "3.0.6",
+    "sklearn": "1.9.1",
+    "scipy": "1.18.1",
+    "matplotlib": "3.11.2"
+  }
+}
